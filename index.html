@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authenticator app Installed!</title>
+    <style>
+      body {
+        //background: rgb(0, 115, 212);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 115, 212, 1) 0%,
+          rgba(0, 164, 255, 1) 100%
+        );
+      }
+      .container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 25px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        max-width: 1000px;
+        width: 70%;
+        box-shadow: #b2b2b263 -1px 4px 20px 7px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-weight: 700;
+        margin-bottom: 0;
+        color: white;
+        text-shadow: 1px 2px 3px #434343;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 1.4rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: normal;
+        margin-top: 20px;
+        line-height: 170%;
+        color: gray;
+      }
+
+      img {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        max-width: 90%;
+      }
+
+      .point {
+        border-radius: 50%;
+        background-color: #ff7a00;
+        padding: 2px 8px;
+        color: white;
+        box-shadow: #0000004f 1px 2px 4px 0px;
+      }
+
+      .image {
+          border-radius: 12px;
+          box-shadow: 3px 2px 20px 9px #b2b2b2;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        var count = 200;
+        var defaults = {
+          origin: { y: 0.4 },
+        };
+
+        function fire(particleRatio, opts) {
+          confetti({
+            ...defaults,
+            ...opts,
+            particleCount: Math.floor(count * particleRatio),
+          });
+        }
+
+        fire(0.25, {
+          spread: 26,
+          startVelocity: 55,
+        });
+        fire(0.2, {
+          spread: 60,
+        });
+        fire(0.35, {
+          spread: 100,
+          decay: 0.91,
+          scalar: 0.8,
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 25,
+          decay: 0.92,
+          scalar: 1.2,
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 45,
+        });
+      });
+    </script>
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
+    <section class="container">
+      <h1>🎉 Authenticator app has been installed!</h1>
+      <div class="content">
+        <h2>
+          Click the puzzle piece icon (1) in the top right corner of your
+          browser. <br />Then, click the small pin icon (2) next to the
+          extension:
+        </h2>
+        <img
+          src="images/step1_2.png"
+          alt="Install and enable Authenticator app chrome extension"
+          class="image"
+        />
+        <h2>
+          Open the extension (3) to start
+            Authenticator app:
+        </h2>
+        <img
+          src="images/step3.png"
+          alt="open Authenticator app chrome extension"
+          class="image"
+        />
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  </body>
+</html>

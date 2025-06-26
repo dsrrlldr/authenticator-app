@@ -1,1 +1,1 @@
-# authenticator-app
+# Authenticator app welcome page
