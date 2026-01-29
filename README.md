@@ -1,1 +1,2 @@
 # Authenticator app welcome page
+[The Authenticator app Extension for Secure Two Factor Authentication](https://chromewebstore.google.com/detail/authenticator-app/bbphmbmmpomfelajledgdkgclfekilei?utm_source=github)
