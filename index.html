@@ -1,159 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Authenticator app Installed!</title>
-    <style>
-      body {
-        //background: rgb(0, 115, 212);
-        background: linear-gradient(
-          180deg,
-          rgba(0, 115, 212, 1) 0%,
-          rgba(0, 164, 255, 1) 100%
-        );
-      }
-      .container {
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .content {
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        border-radius: 25px;
-        margin-top: 20px;
-        margin-bottom: 50px;
-        max-width: 1000px;
-        width: 70%;
-        box-shadow: #b2b2b263 -1px 4px 20px 7px;
-      }
-      h1 {
-        text-align: center;
-        font-size: 2rem;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        font-weight: 700;
-        margin-bottom: 0;
-        color: white;
-        text-shadow: 1px 2px 3px #434343;
-      }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Authenticator app!</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
 
-      h2 {
-        text-align: center;
-        font-size: 1.4rem;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: normal;
-        margin-top: 20px;
-        line-height: 170%;
-        color: gray;
-      }
+<canvas id="confetti-canvas"></canvas>
+<div class="corner-hint"><svg id="corner-arrow-svg" xmlns="http://www.w3.org/2000/svg" fill="none"></svg></div>
 
-      img {
-        margin: 0 auto;
-        margin-bottom: 40px;
-        max-width: 90%;
-      }
+<section class="hero">
+    <div class="hero-inner">
+        <div class="success-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Extension installed successfully
+        </div>
+        <h1>Welcome to <span>Authenticator app!</span></h1>
+        <div class="pin-section">
+            <div class="pin-cards">
+                <div class="pin-card">
+                    <div class="pin-card-header"><div class="pin-card-num">1</div><span class="pin-card-title">Click the puzzle icon</span></div>
+                    <p class="pin-card-desc">Click the puzzle piece icon in the top-right corner of your Chrome toolbar.</p>
+                    <div class="chrome-bar">
+                        <div class="chrome-dots"><div class="chrome-dot" style="background:#ff5f56"></div><div class="chrome-dot" style="background:#ffbd2e"></div><div class="chrome-dot" style="background:#27c93f"></div></div>
+                        <div class="chrome-address">google.com</div>
+                        <div class="chrome-actions"><div class="chrome-btn active"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="3.5" d="M4 24V12h9v-2a6 6 0 0 1 12 0v2h9v12h4a6 6 0 0 1 0 12h-4v8H4v-8h4a6 6 0 0 0 0-12z"/></svg></div></div>
+                    </div>
+                </div>
+                <div class="pin-card">
+                    <div class="pin-card-header"><div class="pin-card-num">2</div><span class="pin-card-title">Pin Authenticator app</span></div>
+                    <p class="pin-card-desc">Click the pin icon next to <strong>Authenticator app</strong> in the dropdown.</p>
+                    <div class="chrome-bar">
+                        <div class="chrome-dots"><div class="chrome-dot" style="background:#ff5f56"></div><div class="chrome-dot" style="background:#ffbd2e"></div><div class="chrome-dot" style="background:#27c93f"></div></div>
+                        <div class="chrome-address">google.com</div>
+                        <div class="chrome-actions"><div class="chrome-btn active"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="3.5" d="M4 24V12h9v-2a6 6 0 0 1 12 0v2h9v12h4a6 6 0 0 1 0 12h-4v8H4v-8h4a6 6 0 0 0 0-12z"/></svg></div></div>
+                    </div>
+                    <div class="ext-popup-dropdown"><div class="ext-popup"><div class="ext-popup-head">Extensions</div><div class="ext-row active"><div class="ext-ico"><img src="logo.png" alt=""></div><span class="ext-name">Authenticator app</span><div class="pin-btn lit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="white" d="M16 12V4h1V2H7v2h1v8l-2 2v2h5.2v6h1.6v-6H18v-2zm-7.2 2l1.2-1.2V4h4v8.8l1.2 1.2z" stroke-width="0.5" stroke="white"/></svg></div></div></div></div>
+                </div>
+            </div>
+        </div>
+        <p class="hero-sub">You're all set. Click the Authenticator app icon in your toolbar to add your first account.</p>
+        <div class="hero-scroll-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>Scroll to see all features</div>
+    </div>
+</section>
 
-      .point {
-        border-radius: 50%;
-        background-color: #ff7a00;
-        padding: 2px 8px;
-        color: white;
-        box-shadow: #0000004f 1px 2px 4px 0px;
-      }
+<section class="features" id="features">
+    <div class="features-inner">
+        <span class="section-tag">How it works</span>
+        <h2 class="section-title">Add your first account in 3 steps</h2>
+        <p class="section-sub">No setup required. Just scan a QR code or enter a secret key.</p>
+        <div class="steps-row">
+            <div class="step"><div class="step-num">1</div><h3>Open any site's 2FA settings</h3><p>Navigate to the security settings of a service like Google, GitHub, or Twitter and enable two-factor authentication to see the QR code.</p></div>
+            <div class="step"><div class="step-num">2</div><h3>Scan or enter the secret</h3><p>Click the Authenticator app icon and choose Scan QR Code, Upload QR Image, or Manual Entry. The account is added immediately.</p></div>
+            <div class="step"><div class="step-num">3</div><h3>Copy your code</h3><p>Click the extension icon anytime to see the current 6-digit code with a countdown timer. Copy it and you're done.</p></div>
+        </div>
+        <hr class="features-divider">
 
-      .image {
-          border-radius: 12px;
-          box-shadow: 3px 2px 20px 9px #b2b2b2;
-      }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        var count = 200;
-        var defaults = {
-          origin: { y: 0.4 },
-        };
+        <!-- ===== WALKTHROUGH BLOCK ===== -->
+        <h2 class="features-sub-title">Explore the interface</h2>
+        <div class="wt-block">
+          <div class="wt-inner" id="wt-inner">
 
-        function fire(particleRatio, opts) {
-          confetti({
-            ...defaults,
-            ...opts,
-            particleCount: Math.floor(count * particleRatio),
-          });
-        }
+            <!-- LEFT: scaled popup mockup -->
+            <div class="wt-popup">
+              <div class="wt-popup-header">
+                <svg class="wt-popup-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0.1773 0.4329 127.9999 127.9999">
+                  <g transform="matrix(0.57828093,0,0,0.5782789,-412.9947046,-133.4451217)" style="transform-origin:477.172px 197.878px">
+                    <path fill="#5268A2" d="M366.542 194.805C368.208 134.809 417.392 87.075 477.412 87.205C537.432 87.335 586.408 135.281 587.814 195.285C588.756 235.489 567.816 273.041 533.118 293.369C498.418 313.699 455.422 313.605 420.812 293.125C386.202 272.647 365.424 235.005 366.542 194.805Z"/>
+                    <path fill="#E2EAF7" d="M366.542 194.805C368.208 134.809 417.392 87.075 477.412 87.205C537.432 87.335 586.408 135.281 587.814 195.285L524.272 195.077C522.378 130.755 433.14 127.221 428.726 195.077L366.542 194.805Z"/>
+                    <path fill="#FEFEFE" d="M428.726 195.077C433.14 127.221 522.378 130.755 524.272 195.077C523.688 219.071 507.14 232.071 486.226 240.127C486.474 247.267 488.766 261.851 483.822 267.369C480.416 271.169 472.93 271.405 469.36 267.715C464.182 262.363 466.222 247.343 466.304 240.127C444.876 233.617 430.614 218.079 428.726 195.077Z"/>
+                    <path fill="#E2EAF7" d="M446.89 195.077C444.686 169.039 476.838 152.507 496.522 170.731C500.848 174.735 508.752 188.899 505.884 195.077C503.428 231.853 450.606 232.747 446.89 195.077Z"/>
+                    <path fill="#C8D2F0" d="M446.89 195.077L447.654 194.431C454.63 195.079 504.434 194.371 505.884 195.077C503.428 231.853 450.606 232.747 446.89 195.077Z"/>
+                  </g>
+                </svg>
+                <span class="wt-popup-name">Authenticator app</span>
+                <div class="wt-popup-lock" id="wt-btn-lock">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                    <path fill="lightgray" d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5M9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9zm4 10.723V20h-2v-2.277a1.993 1.993 0 0 1 .567-3.677A2 2 0 0 1 14 16a1.99 1.99 0 0 1-1 1.723"/>
+                  </svg>
+                  <span class="wt-popup-lock-countdown">4:32</span>
+                </div>
+              </div>
+              <div class="wt-tokens-section">
+                <div class="wt-action-bar">
+                  <div class="wt-action-btn" id="wt-btn-scan">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z"/></svg>
+                    Scan QR
+                  </div>
+                  <div class="wt-action-btn" id="wt-btn-upload">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h2v2H5zM1 1h10v10H1zm2 2v6h6V3zm2 14h2v2H5zm-4-4h10v10H1zm2 2v6h6v-6zm10-2h4v2h2v-2h4v2h-4v2h4v6h-4v-2h-4v2h-2v-2h2v-2h-2zm8 8v-2h-2v2zm-2-4h-2v-2h-2v4h4zM17 2v3h-3v2h3v3h2V7h3V5h-3V2Z"/></svg>
+                  </div>
+                  <div class="wt-action-btn" id="wt-btn-manual">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 15H3V6h18zM9 8h2v2H9zM5 8h2v2H5zm3 8h8v1H8zm5-8h2v2h-2zm-4 4h2v2H9zm-4 0h2v2H5zm8 0h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/></svg>
+                  </div>
+                  <div class="wt-action-btn settings" id="wt-btn-settings">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m0-6c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m0 12c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2"/></svg>
+                  </div>
+                </div>
+                <div class="wt-tokens-list">
+                  <div class="wt-token">
+                    <div class="wt-token-remove" id="wt-btn-remove">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59L7.11 5.7a1 1 0 0 0-1.41 1.41L10.59 12L5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4"/></svg>
+                    </div>
+                    <div class="wt-token-label">user@github.com</div>
+                    <div class="wt-token-issuer">GitHub</div>
+                    <div class="wt-token-code-row">
+                      <div class="wt-token-code">123 456</div>
+                      <div class="wt-copy-btn" id="wt-btn-copy">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 448 512"><path fill="currentColor" d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h140.1l67.9 67.9V320c0 8.8-7.2 16-16 16m-192 48h192c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9l-67.8-67.9c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64M64 128c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h192c35.3 0 64-28.7 64-64v-32h-48v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16h32v-48z"/></svg>
+                      </div>
+                      <div class="wt-progress-ring" id="wt-btn-timer">
+                        <svg viewBox="0 0 32 32"><circle class="wt-ring-bg" cx="16" cy="16" r="14"/><circle class="wt-ring-fg" cx="16" cy="16" r="14" stroke-dashoffset="3"/></svg>
+                        <span class="wt-ring-text">29</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wt-token">
+                    <div class="wt-token-label">user@gmail.com</div>
+                    <div class="wt-token-issuer">Google</div>
+                    <div class="wt-token-code-row">
+                      <div class="wt-token-code">789 012</div>
+                      <div class="wt-copy-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 448 512"><path fill="currentColor" d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h140.1l67.9 67.9V320c0 8.8-7.2 16-16 16m-192 48h192c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9l-67.8-67.9c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64M64 128c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h192c35.3 0 64-28.7 64-64v-32h-48v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16h32v-48z"/></svg>
+                      </div>
+                      <div class="wt-progress-ring">
+                        <svg viewBox="0 0 32 32"><circle class="wt-ring-bg" cx="16" cy="16" r="14"/><circle class="wt-ring-fg" cx="16" cy="16" r="14" stroke-dashoffset="47" style="stroke:#f57c00"/></svg>
+                        <span class="wt-ring-text" style="color:#f57c00">14</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        fire(0.25, {
-          spread: 26,
-          startVelocity: 55,
-        });
-        fire(0.2, {
-          spread: 60,
-        });
-        fire(0.35, {
-          spread: 100,
-          decay: 0.91,
-          scalar: 0.8,
-        });
-        fire(0.1, {
-          spread: 120,
-          startVelocity: 25,
-          decay: 0.92,
-          scalar: 1.2,
-        });
-        fire(0.1, {
-          spread: 120,
-          startVelocity: 45,
-        });
-      });
-    </script>
-    <link rel="icon" type="image/png" href="favicon.png" />
-  </head>
-  <body>
-    <section class="container">
-      <h1>🎉 Authenticator app has been installed!</h1>
-      <div class="content">
-        <h2>
-          Click the puzzle piece icon (1) in the top right corner of your
-          browser. <br />Then, click the small pin icon (2) next to the
-          extension:
-        </h2>
-        <img
-          src="images/step1_2.png"
-          alt="Install and enable Authenticator app chrome extension"
-          class="image"
-        />
-        <h2>
-          Open the extension (3) to start
-            Authenticator app:
-        </h2>
-        <img
-          src="images/step3.png"
-          alt="open Authenticator app chrome extension"
-          class="image"
-        />
-      </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            <!-- RIGHT: collapsible button descriptions -->
+            <div class="wt-features-col">
+
+              <div class="wt-item active" data-target="wt-btn-scan">
+                <div class="wt-item-header">
+                  <span class="wt-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z"/></svg></span>
+                  Scan QR
+                  <svg class="wt-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="wt-item-body"><p>Drag to select any QR code visible on screen. The extension captures the region, decodes the code, and imports the 2FA account instantly — no screenshot app needed.</p></div>
+              </div>
+
+              <div class="wt-item" data-target="wt-btn-upload">
+                <div class="wt-item-header">
+                  <span class="wt-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h2v2H5zM1 1h10v10H1zm2 2v6h6V3zm2 14h2v2H5zm-4-4h10v10H1zm2 2v6h6v-6zm10-2h4v2h2v-2h4v2h-4v2h4v6h-4v-2h-4v2h-2v-2h2v-2h-2zm8 8v-2h-2v2zm-2-4h-2v-2h-2v4h4zM17 2v3h-3v2h3v3h2V7h3V5h-3V2Z"/></svg></span>
+                  Upload QR Image
+                  <svg class="wt-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="wt-item-body"><p>Have a QR code saved as a PNG or JPG? Upload the file directly and Authenticator app will decode and import the account automatically, without opening any other app.</p></div>
+              </div>
+
+              <div class="wt-item" data-target="wt-btn-manual">
+                <div class="wt-item-header">
+                  <span class="wt-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 15H3V6h18zM9 8h2v2H9zM5 8h2v2H5zm3 8h8v1H8zm5-8h2v2h-2zm-4 4h2v2H9zm-4 0h2v2H5zm8 0h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/></svg></span>
+                  Manual Entry
+                  <svg class="wt-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="wt-item-body"><p>Know your 2FA secret key? Type in the service name, account label, and Base32 secret to add the account directly — works with any TOTP-compatible service even without a QR code.</p></div>
+              </div>
+
+              <div class="wt-item" data-target="wt-btn-settings">
+                <div class="wt-item-header">
+                  <span class="wt-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m0-6c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m0 12c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2"/></svg></span>
+                  Settings
+                  <svg class="wt-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="wt-item-body"><p>Change your master password, adjust the auto-lock timeout (1–60 min), export your vault as an encrypted backup, import codes from a backup file, or switch the display language.</p></div>
+              </div>
+
+              <div class="wt-item" data-target="wt-btn-lock">
+                <div class="wt-item-header">
+                  <span class="wt-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5M9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9zm4 10.723V20h-2v-2.277a1.993 1.993 0 0 1 .567-3.677A2 2 0 0 1 14 16a1.99 1.99 0 0 1-1 1.723"/></svg></span>
+                  Lock Vault
+                  <svg class="wt-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="wt-item-body"><p>Lock your vault immediately — all codes are hidden and encrypted until you re-enter your master password. The countdown timer shows how long until auto-lock activates.</p></div>
+              </div>
+
+              <div class="wt-item" data-target="wt-btn-copy">
+                <div class="wt-item-header">
+                  <span class="wt-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 448 512"><path fill="currentColor" d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16h140.1l67.9 67.9V320c0 8.8-7.2 16-16 16m-192 48h192c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9l-67.8-67.9c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64M64 128c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h192c35.3 0 64-28.7 64-64v-32h-48v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16h32v-48z"/></svg></span>
+                  Copy Code
+                  <svg class="wt-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="wt-item-body"><p>Click the copy button — or tap the code itself — to instantly copy it to your clipboard, ready to paste into any login form.</p></div>
+              </div>
+
+              <div class="wt-item" data-target="wt-btn-timer">
+                <div class="wt-item-header">
+                  <span class="wt-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></span>
+                  Timer Ring
+                  <svg class="wt-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="wt-item-body"><p>The ring drains over 30 seconds — blue while safe, turning orange below 10 s and red below 5 s. A new code is generated automatically when it resets.</p></div>
+              </div>
+
+              <div class="wt-item" data-target="wt-btn-remove">
+                <div class="wt-item-header">
+                  <span class="wt-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59L7.11 5.7a1 1 0 0 0-1.41 1.41L10.59 12L5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4"/></svg></span>
+                  Remove Account
+                  <svg class="wt-item-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="wt-item-body"><p>Hover over any account card to reveal the × button in the top-right corner. Click it to permanently remove that account from your vault.</p></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <hr class="features-divider" style="margin-top: 48px;">
+        <h2 class="features-sub-title">Everything included</h2>
+        <div class="cards-grid">
+            <div class="feat-card"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h6v6H4zm16 0v6h-6V4zm-6 11h2v-2h-2v-2h2v2h2v-2h2v2h-2v2h2v3h-2v2h-2v-2h-3v2h-2v-4h3zm2 0v3h2v-3zM4 20v-6h6v6zM6 6v2h2V6zm10 0v2h2V6zM6 16v2h2v-2zm-2-5h2v2H4zm5 0h4v4h-2v-2H9zm2-5h2v4h-2zM2 2v4H0V2a2 2 0 0 1 2-2h4v2zm20-2a2 2 0 0 1 2 2v4h-2V2h-4V0zM2 18v4h4v2H2a2 2 0 0 1-2-2v-4zm20 4v-4h2v4a2 2 0 0 1-2 2h-4v-2z"/></svg></div><h3>QR Code Scanning</h3><p>Point to any QR code on screen and the extension detects and imports the account automatically — no photo needed.</p></div>
+            <div class="feat-card"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div><h3>TOTP Code Generation</h3><p>Get fresh 6-digit codes every 30 seconds, with a countdown timer so you always know how long a code is valid.</p></div>
+            <div class="feat-card"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C9.243 2 7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7c0-2.757-2.243-5-5-5M9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9zm4 10.723V20h-2v-2.277a1.993 1.993 0 0 1 .567-3.677A2 2 0 0 1 14 16a1.99 1.99 0 0 1-1 1.723"/></svg></div><h3>Password Protection</h3><p>Lock your vault with a master password. AES-GCM-256 encryption keeps your secrets safe, with auto-lock after inactivity.</p></div>
+            <div class="feat-card"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="currentColor" d="M5 5h2v2H5zM1 1h10v10H1zm2 2v6h6V3zm2 14h2v2H5zm-4-4h10v10H1zm2 2v6h6v-6zm10-2h4v2h2v-2h4v2h-4v2h4v6h-4v-2h-4v2h-2v-2h2v-2h-2zm8 8v-2h-2v2zm-2-4h-2v-2h-2v4h4zM17 2v3h-3v2h3v3h2V7h3V5h-3V2Z"/></svg></div><h3>QR Image Upload</h3><p>Already have a QR code saved as an image? Upload it directly to add the account without needing to scan live.</p></div>
+            <div class="feat-card"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="currentColor" d="M21 4H3c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 15H3V6h18zM9 8h2v2H9zM5 8h2v2H5zm3 8h8v1H8zm5-8h2v2h-2zm-4 4h2v2H9zm-4 0h2v2H5zm8 0h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"/></svg></div><h3>Manual Entry</h3><p>Add accounts manually by entering the service name, account, and secret key — works with any TOTP-compatible service.</p></div>
+            <div class="feat-card"><div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path fill="currentColor" d="M19.35 10.04A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 0 0 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96M14 13v4h-4v-4H7l5-5 5 5z"/></svg></div><h3>Export &amp; Backup</h3><p>Export your entire vault as an encrypted backup and import it on any device — your data is never sent to a server.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="faq" id="faq">
+    <div class="faq-inner">
+        <div class="faq-header"><span class="section-tag">FAQ</span><h2 class="section-title">Frequently asked questions</h2><p class="section-sub" style="margin-bottom:0">Everything you need to know to get the most out of Authenticator app.</p></div>
+        <div class="faq-list">
+            <div class="faq-item"><input type="checkbox" id="faq1"><label class="faq-label" for="faq1">What is TOTP and how does it work?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>TOTP (Time-based One-Time Password) generates a unique 6-digit code every 30 seconds using a shared secret key and the current time. When you enable 2FA on a service, it gives you a QR code containing that secret. Authenticator app reads the QR code and generates the matching codes — no internet connection required.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq2"><label class="faq-label" for="faq2">How is my data secured?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>Your account secrets are encrypted with AES-GCM-256. The encryption key is derived from your master password using PBKDF2 with 500,000 iterations. Your data never leaves your device and is never sent to any server.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq3"><label class="faq-label" for="faq3">Does it sync across devices?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>Not automatically. Authenticator app stores everything locally in your browser. To move your accounts to another device, use the Export feature to create an encrypted backup file, then Import it on the new device.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq4"><label class="faq-label" for="faq4">What happens if I forget my master password?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>If you forget your master password, there is no recovery mechanism by design — this is a security feature. We strongly recommend exporting an encrypted backup regularly and storing it somewhere safe.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq5"><label class="faq-label" for="faq5">Can I export and import my codes?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>Yes. Go to Settings in the extension and choose Export Codes. You will receive an encrypted backup file. To restore it, use Import Codes and enter your export password. The file is encrypted so it is safe to store in cloud drives.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq6"><label class="faq-label" for="faq6">My codes are correct but the site keeps rejecting them.<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>TOTP codes are time-based — if your device clock is even slightly off, the generated code won't match the server. Make sure your system time is set to automatic sync (Settings → Date &amp; Time → Set automatically). This is the most common cause of rejected codes.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq7"><label class="faq-label" for="faq7">My accounts disappeared after reinstalling Chrome or switching computers.<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>Authenticator app stores all data locally in your browser's storage — nothing is sent to the cloud. Uninstalling Chrome or using a different device will not carry your accounts over. Always export an encrypted backup before reinstalling or switching devices, and import it afterward.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq8"><label class="faq-label" for="faq8">QR code scanning doesn't work on some websites.<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>Some websites use strict Content Security Policy (CSP) headers that block the screen-capture library used for QR scanning. As a workaround, take a screenshot of the QR code and use the Upload QR Image button to import it from file — this bypasses the CSP restriction entirely.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq9"><label class="faq-label" for="faq9">Why does the extension keep asking for my password every few minutes?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>The auto-lock feature protects your vault when your device is unattended. By default it locks after 5 minutes of inactivity. You can adjust this timeout (1–60 minutes) or disable it entirely in Settings → Auto-lock Timeout.</p></div></div>
+            <div class="faq-item"><input type="checkbox" id="faq10"><label class="faq-label" for="faq10">I'm locked out and have no backup — can I recover my accounts?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></label><div class="faq-body"><p>Unfortunately no. The vault is encrypted with AES-GCM-256 and there is no back door — not even we can decrypt it without your password. If you have no backup, you will need to re-add each account manually by going through the 2FA setup process on each service again. Going forward, keep a regular encrypted export stored somewhere safe.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><a href="#" class="footer-logo"><img src="logo.png" alt="Authenticator app"><span>Authenticator app</span></a><p class="footer-legal">© 2025 Authenticator app. Not affiliated with Google.</p></div></footer>
+
+<script src="welcome.js"></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-      ym(103080514, "init", {
+    ym(103080514, "init", {
         clickmap:true,
         trackLinks:true,
         accurateTrackBounce:true,
         webvisor:true
-      });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/103080514" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-  </body>
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/103080514" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
 </html>
