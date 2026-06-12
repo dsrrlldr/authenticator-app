@@ -5,7 +5,7 @@
     function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     resize();
     window.addEventListener('resize', resize);
-    const colors = ['#1976d2', '#90caf9', '#ffffff', '#42a5f5', '#1e88e5', '#a78bfa', '#34d399'];
+    const colors = ['#359ec6', '#42c2f3', '#ffffff', '#4c9ebd', '#276f8a', '#c7ebfa', '#34d399'];
     const particles = [];
     function createParticle(x, y) {
         return { x, y, vx: (Math.random() - 0.5) * 8, vy: Math.random() * -12 - 4, size: Math.random() * 9 + 4, color: colors[Math.floor(Math.random() * colors.length)], rotation: Math.random() * Math.PI * 2, spin: (Math.random() - 0.5) * 0.25, shape: Math.random() > 0.5 ? 'rect' : 'circle', opacity: 1, gravity: 0.35 };
@@ -36,7 +36,7 @@
 // ===== CORNER ARROW =====
 (function () {
     const NS = 'http://www.w3.org/2000/svg';
-    const COLOR = 'rgba(25,118,210,0.8)';
+    const COLOR = 'rgba(66,194,243,0.95)';
 
     function el(tag, attrs) {
         const e = document.createElementNS(NS, tag);
@@ -105,7 +105,7 @@
     if (!inner) return;
 
     const NS = 'http://www.w3.org/2000/svg';
-    const COLOR = 'rgba(25,118,210,0.82)';
+    const COLOR = 'rgba(66,194,243,0.95)';
 
     // Build SVG overlay
     const svg = document.createElementNS(NS, 'svg');
