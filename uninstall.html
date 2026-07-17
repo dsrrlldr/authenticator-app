@@ -396,6 +396,7 @@
     </div>
 </section>
 
+<script src="i18n.js"></script>
 <script>
     (function () {
         const form = document.getElementById('feedback-form');
@@ -412,7 +413,7 @@
             const btn = form.querySelector('.feedback-btn');
             if (btn) {
                 btn.disabled = true;
-                btn.textContent = 'Sending…';
+                btn.textContent = (window.I18N && window.I18N.unSending) || 'Sending…';
             }
         });
 
@@ -421,7 +422,7 @@
             const feedback = form.closest('.feedback');
             if (feedback) feedback.hidden = true;
             const pageTitle = document.getElementById('page-title');
-            if (pageTitle) pageTitle.textContent = 'Thanks for your feedback!';
+            if (pageTitle) pageTitle.textContent = (window.I18N && window.I18N.unThanks) || 'Thanks for your feedback!';
             const faq = document.getElementById('faq-block');
             if (faq) faq.hidden = false;
         });
